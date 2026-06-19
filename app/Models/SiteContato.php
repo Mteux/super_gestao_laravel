@@ -9,7 +9,7 @@ class SiteContato extends Model
 {
     //
 
-    use HasFactory;  // 👈 ADICIONE ESTA LINHA
+    use HasFactory;
 
     protected $table = 'site_contatos';  // Ajuste para o nome da sua tabela
 
