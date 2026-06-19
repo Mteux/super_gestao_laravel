@@ -6,19 +6,19 @@ Projeto desenvolvido durante curso de Laravel, com evoluções contínuas.
 - PHP 8.2+
 - Laravel 12
 - MySQL
-- Bootstrap (ou a tecnologia que você está usando)
+
 
 ## 📋 Pré-requisitos
 - PHP 8.2 ou superior
 - Composer
 - MySQL
-- Node.js (se usar Vite)
+
 
 ## 🔧 Instalação
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone https://github.com/MTeux/super_gestao_laravel
 
 # Entre na pasta
 cd seu-projeto
