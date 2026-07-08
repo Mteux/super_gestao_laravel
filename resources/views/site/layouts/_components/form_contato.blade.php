@@ -11,11 +11,11 @@
     <br>
 
   
-    <select name="motivo_contato" class="{{ $classe }}">
+    <select name="motivo_contatos_id" class="{{ $classe }}">
         <option value="">Qual o motivo do contato?</option>
 
         @foreach ($motivo_contatos as $key => $motivo_contato)
-            <option value="{{ $motivo_contato->id }}" {{ old('motivo_contato') == $motivo_contato->id ? 'selected' : ''}}>{{ $motivo_contato->motivo_contato }}</option>
+            <option value="{{ $motivo_contato->id }}" {{ old('motivo_contatos_id') == $motivo_contato->id ? 'selected' : ''}}>{{ $motivo_contato->motivo_contato }}</option>
         @endforeach
     </select>
     <br>
@@ -23,10 +23,12 @@
     <br>
     <button type="submit" class="{{ $classe }}">ENVIAR</button>
 </form>
+@if($errors->any())
+    <div style="position:absolute; top:0px; left:0px; width:100%; background:red;"> 
 
-<div style="position:absolute; top:0px; left:0px; width:100%; background:red;"> 
-<pre>
-    {{ print_r($errors) }}
-</pre>
+        @foreach ($errors->all() as $erro )
+            {{ $erro }}
+        @endforeach
 
-</div>
+    </div>
+@endif
