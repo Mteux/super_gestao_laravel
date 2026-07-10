@@ -16,11 +16,12 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'log.acesso' => \App\Http\Middleware\LogAcessoMiddleware::class,
+            'autenticacao' => \App\Http\Middleware\AutenticacaoMiddleware::class,
         ]);
 
-        /*$middleware->web(append: [
+        $middleware->web(append: [
             LogAcessoMiddleware::class,
-        ]);*/
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
