@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     public function index()
@@ -9,8 +11,22 @@ class LoginController extends Controller
         return view('site.login', ['titulo' => 'login']);
     }
 
-    public function autenticar()
+    public function autenticar(Request $request)
     {
-        return 'Chegamos até aqui!';
+        // regras de validação
+        $regras = [
+            'usuario' => 'email',
+            'senha' => 'required',
+        ];
+
+        // as mensagens de feedback de validações
+        $feedback = [
+            'usuario.email' => 'O campo usuário (e-mail) é obrigatório',
+            'senha.required' => 'O campo senha é obrigatório',
+        ];
+
+        $request->validate($regras, $feedback);
+
+        print_r($request->all());
     }
 }
