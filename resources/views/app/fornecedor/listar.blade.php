@@ -19,10 +19,34 @@
 
         <div class="informacao-pagina">
 
-            <div style="width: 30%; margin-left: auto; margin-right: auto;">
+            <div style="width: 90%; margin-left: auto; margin-right: auto;">
                 <form method="post" action="">
+                    <table border="1" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Site</th>
+                                <th>UF</th>
+                                <th>E-mail</th>
+                                <th>Nome</th>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
 
-                    ....Listar...
+                        <tbody>
+                            @foreach ($fornecedores as $fornecedor)
+                                <tr>
+                                    <td>{{ $fornecedor->nome }}</td>
+                                    <td>{{ $fornecedor->site }}</td>
+                                    <td>{{ $fornecedor->uf }}</td>
+                                    <td>{{ $fornecedor->email }}</td>
+                                    <td>Excluir</td>
+                                    <td>Editar</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    
 
             </div>
 
