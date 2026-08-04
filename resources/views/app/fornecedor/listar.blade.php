@@ -47,6 +47,20 @@
                         </tbody>
                     </table>
                     
+                    {{ $fornecedores->appends($request)->links('pagination::bootstrap-5') }}
+                    <!--
+                    <br>
+                    {{ $fornecedores->count() }} - Total de registros por pagina
+                    <br>
+                    {{ $fornecedores->total() }} - Total de registros consultados
+                    <br>
+                    {{ $fornecedores->firstItem() }} - Numero do primeiro registros da pagina
+                    <br>
+                    {{ $fornecedores->lastItem() }} - Numero do ultimo registros da pagina
+                    -->
+
+                    <br>
+                    Exibindo {{ $fornecedores->count() }} Fornecedores de {{ $fornecedores->total() }} (de {{ $fornecedores->firstItem() }} a {{ $fornecedores->lastItem() }} )
 
             </div>
 
