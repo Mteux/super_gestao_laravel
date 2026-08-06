@@ -50,8 +50,11 @@ Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(functi
     Route::get('/fornecedor/editar/{id}/{msg?}', [\App\Http\Controllers\FornecedorController::class, 'editar'])
         ->name('app.fornecedor.editar');
 
-    Route::get('/produto', [\App\Http\Controllers\ProdutoController::class, 'index'])
-        ->name('app.produto');
+    Route::get('/fornecedor/excluir/{id}', [\App\Http\Controllers\FornecedorController::class, 'excluir'])
+        ->name('app.fornecedor.excluir');
+
+    // Rota para produtos
+    Route::resource('produto', \App\Http\Controllers\ProdutoController::class);
 });
 
 Route::get('/teste/{p1}/{p2}', [\App\Http\Controllers\TesteController::class, 'teste'])->name('teste');
